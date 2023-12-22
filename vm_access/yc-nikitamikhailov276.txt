@@ -1,0 +1,12 @@
+login: yc-user
+passphrase: JlOv3bJ-5z
+ip: 130.193.54.101
+
+ssh -i vm_access/yc-nikitamikhailov276 yc-user@130.193.54.101
+
+yc-user@ya.ru
+JlOv3bJ-5z
+
+http://130.193.54.101:8000/
+
+Public IP 130.193.54.101
