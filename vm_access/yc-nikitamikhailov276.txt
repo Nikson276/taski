@@ -2,11 +2,58 @@ login: yc-user
 passphrase: JlOv3bJ-5z
 ip: 130.193.54.101
 
-ssh -i vm_access/yc-nikitamikhailov276 yc-user@130.193.54.101
+from MyLaptop:
+    ssh -i vm_access/yc-nikitamikhailov276 yc-user@130.193.54.101
+from WorkLaptop:
+    ssh -i C:/Users/n.k.mikhaylov/Dev/vm_access/yc-nikitamikhailov276 yc-user@130.193.54.101
 
+Auth superuser data:
+yc-user
 yc-user@ya.ru
 JlOv3bJ-5z
+12345
 
 http://130.193.54.101:8000/
+http://130.193.54.101:3000/
 
 Public IP 130.193.54.101
+Domain: https://taski-yandex.ddns.net/
+Kittygram: https://nikson276-kittygram.servehalflife.com
+
+    sudo systemctl stop gunicorn
+    sudo systemctl start gunicorn
+
+Проверка конфига FireWall ufw
+    sudo ufw status
+
+Открыть файл конфигурации Nginx
+    sudo nano /etc/nginx/sites-enabled/default
+
+Проверка файла конфигурации Nginx
+    sudo nginx -t
+
+Перезагрузка конфига Nginx
+    sudo systemctl reload nginx
+
+Управление Nginx:
+    sudo systemctl start nginx
+    sudo systemctl restart nginx
+    sudo nginx -s сигнал
+        stop — быстрое завершение
+        quit — плавное завершение
+        reload — перезагрузка конфигурационного файла
+        reopen — переоткрытие лог-файлов
+
+Просмотр логов Nginx
+    sudo tail <путь и имя_файла>
+    sudo tail /var/log/nginx/access.log
+    sudo tail /var/log/nginx/error.log
+
+    Перед именем файла есть необязательный флаг -n число_строк (берет опр кол-во строк с конца файла)
+
+Узнать статус сертификата systemctl:
+    sudo certbot certificates
+Включить автообновление сертификата:
+    sudo certbot renew --dry-run
+Обновить сертификат вручную:
+    sudo certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start"
