@@ -13,6 +13,14 @@ yc-user@ya.ru
 JlOv3bJ-5z
 12345
 
+DockerHub
+To use the access token from your Docker CLI client:
+
+1. Run docker login -u nikson276
+
+2. At the password prompt, enter the personal access token.
+Token: dckr_pat_ea4levVErh5RX05JODRKGexTRQU
+
 http://130.193.54.101:8000/
 http://130.193.54.101:3000/
 
